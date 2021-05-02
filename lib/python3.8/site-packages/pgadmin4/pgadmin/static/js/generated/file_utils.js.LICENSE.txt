@@ -1,3 +1,0 @@
-/*! Parser: metric */
-
-/*! tablesorter (FORK) - updated 2020-03-03 (v2.31.3)*/
