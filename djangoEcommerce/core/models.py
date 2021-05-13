@@ -77,7 +77,7 @@ class productMedia(models.Model):
     id = models.AutoField(primary_key=True)
     product_id = models.ForeignKey(products, on_delete=models.CASCADE)
     media_type_choice = ((1, "Image"), (2, "Video"))
-    media_type = models.CharField(max_length=255)
+    media_type = models.CharField(choices=media_type_choice, max_length=255)
     media_content = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     is_active = models.IntegerField(default=1)
