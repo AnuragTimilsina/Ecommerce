@@ -18,12 +18,19 @@ from django.urls import path
 from core import views
 from django.conf.urls.static import static
 from . import settings
+from djangoEcommerce import adminViews
 
 urlpatterns = [
     path('admin/', views.adminLogin),
     path('demo/', views.demoPage),
     path('demopage/', views.demoPageTemplate),
+    
+    # Page for admin
+    path('admin_home', adminViews.admin_home),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+
