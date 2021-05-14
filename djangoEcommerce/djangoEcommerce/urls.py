@@ -21,12 +21,14 @@ from . import settings
 from djangoEcommerce import adminViews
 
 urlpatterns = [
-    path('admin/', views.adminLogin),
+    path('admin/', views.adminLogin, name="admin_login"),
     path('demo/', views.demoPage),
     path('demopage/', views.demoPageTemplate),
-    
+    path('admin_login_process/', views.admin_login_process, name="admin_login_process"),
+    path('admin_logout_process/', views.admin_logout_process,
+         name="admin_logout_process"),
     # Page for admin
-    path('admin_home', adminViews.admin_home),
+    path('admin_home', adminViews.admin_home, name="admin_home"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
