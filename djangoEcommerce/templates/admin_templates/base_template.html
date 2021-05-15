@@ -41,7 +41,26 @@
                 <section class="section">
                     <div class="section-header">
                         <h1>{% block page_title %} {% endblock page_title %}</h1>
-                    </div>       
+                    </div>   
+                    
+                    {% if messages %}
+                    {% for message in messages %}
+                    
+                    {% if message.tags == "success" %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                    {% endif %}
+                    
+                    {% if message.tags == "error" %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                    {% endif %}
+                    
+                    {% endfor %}
+                    {% endif %}
+                    
                 {% block page_content %}
                 {% endblock page_content %}
             </div>

@@ -4,3 +4,5 @@ from .models import categories, subCategories
 
 admin.site.register(categories)
 admin.site.register(subCategories)
+
+

@@ -1,0 +1,25 @@
+{% extends 'admin_templates/base_template.html' %}
+
+{% block title %}
+Category List
+{% endblock title %}
+
+{% block custom_css %}
+{% endblock custom_css %}
+
+{% block page_title %}
+Category list
+{% endblock page_title %}
+
+{% block page_content %}
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">SAVE CATEGORY</button>
+</form>
+
+{% endblock page_content %}
+
+{% block custom_js %}
+{% endblock custom_js %}
