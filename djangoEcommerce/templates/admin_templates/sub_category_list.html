@@ -1,48 +1,49 @@
 {% extends 'admin_templates/base_template.html' %}
 
 {% block title %}
-Category List
+Sub Category List
 {% endblock title %}
 
 {% block custom_css %}
 {% endblock custom_css %}
 
 {% block page_title %}
-Category list
+Sub Category list
 {% endblock page_title %}
 
 {% block page_content %}
 
 <div class="row">
 
-{% for category in categories_list %}
+    {% for subcategory in subcategories_list %}
 
     <div class="col-12 col-sm-6 col-md-6 col-lg-3">
         <article class="article">
             <div class="article-header">
-                <div class="article-image" data-background="/media/{{ category.thumbnail }}"
+                <div class="article-image" data-background="/media/{{ subcategory.thumbnail }}"
                     style="background-image: url(&quot;assets/img/news/img08.jpg&quot;);">
                 </div>
                 <div class="article-title">
-                    <h4><a href="#" class="badge badge-danger">{{ category.title }}</a></h4>
+                    <h4><a href="#" class = "badge badge-danger" >{{ subcategory.title }}</a></h4> 
                 </div>
             </div>
             <div class="article-details">
-                <p> {{ category.description }} </p>
-                <p> {{ category.url_slug }} </p>
+                <p> {{ subcategory.description }} </p>
+                <p> {{ subcategory.url_slug }} </p>
+                <p><span class="badge badge-primary">{{ subcategory.category_id.title }}</span></p>
                 <div class="article-cta">
                     <label class="custom-switch mt-2" style="float:left">
-                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" {% if category.is_active == 1 %}checked{% endif %}>
+                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" {% if subcategory.is_active == 1 %} checked {% endif %}>
                         <span class="custom-switch-indicator"></span>
                         <span class="custom-switch-description">Active</span>
                     </label>
-                    <a href="{% url 'category_update' category.id %}" class="btn btn-warning">Edit</a>
+                    <a href="{% url 'sub_category_update' subcategory.id %}" class="btn btn-warning">Edit</a>
                 </div>
             </div>
         </article>
     </div>
 
-{% endfor %}
+    {% endfor %}
 
 </div>
 

@@ -28,11 +28,24 @@ urlpatterns = [
     path('admin_login_process/', views.admin_login_process, name="admin_login_process"),
     path('admin_logout_process/', views.admin_logout_process,
          name="admin_logout_process"),
+
+    # Page for admin
     path('admin_home', adminViews.admin_home, name="admin_home"),
+
+    # Categories
     path('category_list', adminViews.categoriesListView.as_view(), name="category_list"),
     path('category_create', adminViews.categoriesCreateView.as_view(),
          name="category_create"),
     path('category_update/<slug:pk>', adminViews.categoriesUpdateView.as_view(), name="category_update"),
+
+    # Sub-categories
+    path('sub_category_list', adminViews.subcategoriesListView.as_view(),
+         name="sub_category_list"),
+    path('sub_category_create', adminViews.subcategoriesCreateView.as_view(),
+         name="sub_category_create"),
+    path('sub_category_update/<slug:pk>',
+         adminViews.subcategoriesUpdateView.as_view(), name="sub_category_update"),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

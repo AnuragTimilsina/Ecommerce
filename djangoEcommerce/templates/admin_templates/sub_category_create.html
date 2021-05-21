@@ -1,14 +1,14 @@
 {% extends 'admin_templates/base_template.html' %}
 
 {% block title %}
-Category create
+Sub-Category create
 {% endblock title %}
 
 {% block custom_css %}
 {% endblock custom_css %}
 
 {% block page_title %}
-Category create
+Sub-Category create
 {% endblock page_title %}
 
 {% block page_content %}
@@ -16,7 +16,7 @@ Category create
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">SAVE CATEGORY</button>
+    <button type="submit">SAVE SUB-CATEGORY</button>
 </form>
 
 {% endblock page_content %}
