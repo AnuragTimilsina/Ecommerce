@@ -48,7 +48,7 @@ class categories(models.Model):
 
     def get_absolute_url(self):
         return reverse("category_list")
-    
+
 
 class subCategories(models.Model):
     id = models.AutoField(primary_key=True)

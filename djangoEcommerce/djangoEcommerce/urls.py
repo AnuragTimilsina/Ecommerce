@@ -32,6 +32,7 @@ urlpatterns = [
     path('category_list', adminViews.categoriesListView.as_view(), name="category_list"),
     path('category_create', adminViews.categoriesCreateView.as_view(),
          name="category_create"),
+    path('category_update/<slug:pk>', adminViews.categoriesUpdateView.as_view(), name="category_update"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -12,9 +12,40 @@ Category list
 {% endblock page_title %}
 
 {% block page_content %}
+
+<div class="row">
+
 {% for category in categories_list %}
-<p> {{ category.title }} </p>
+
+    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+        <article class="article">
+            <div class="article-header">
+                <div class="article-image" data-background="/media/{{ category.thumbnail }}"
+                    style="background-image: url(&quot;assets/img/news/img08.jpg&quot;);">
+                </div>
+                <div class="article-title">
+                    <h2><a href="#">{{ category.title }}</a></h2>
+                </div>
+            </div>
+            <div class="article-details">
+                <p> {{ category.description }} </p>
+                <p> {{ category.url_slug }} </p>
+                <div class="article-cta">
+                    <label class="custom-switch mt-2" style="float:left">
+                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" {% if category.is_active == 1 %}checked{% endif %}>
+                        <span class="custom-switch-indicator"></span>
+                        <span class="custom-switch-description">Active</span>
+                    </label>
+                    <a href="{% url 'category_update' category.id %}" class="btn btn-warning">Edit</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
 {% endfor %}
+
+</div>
+
 {% endblock page_content %}
 
 {% block custom_js %}

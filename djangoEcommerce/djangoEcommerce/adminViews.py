@@ -21,3 +21,10 @@ class categoriesCreateView(SuccessMessageMixin, CreateView):
     success_message = "Category Added!"
     fields = '__all__'
     template_name = "admin_templates/category_create.html"
+
+
+class categoriesUpdateView(SuccessMessageMixin, UpdateView):
+    model = categories
+    success_message = "Category Updated!"
+    fields = '__all__'
+    template_name = "admin_templates/category_create.html"
