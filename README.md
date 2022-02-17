@@ -1,2 +1,2 @@
 # Ecommerce
-This is a dummy eCommerce site built in django 
+This is a dummy eCommerce site built in django. It has multivendor functionality. 
