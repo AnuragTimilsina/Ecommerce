@@ -17,7 +17,7 @@ Installation:
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/AnuragTimilsina/Tourism_app.git
+   git clone https://github.com/AnuragTimilsina/Ecommerce.git
    ```
 3. Install PIP packages
    ```sh
